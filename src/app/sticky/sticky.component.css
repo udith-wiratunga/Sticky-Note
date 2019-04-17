@@ -3,29 +3,24 @@ div.sticky h2{
   font-weight:bolder;
 }
 
-div.sticky ul,li{
-  list-style: none;
-  font-weight: normal;
-}
 
 div.sticky {
   overflow: hidden;
-  
   text-decoration: none;
   color:#000;
   background: #ffc;
   display:block;
   height: 10em;
   width: 10em;
-  padding: 1em;
+  padding: .75em;
+  -o-transition:-o-transform .15s linear;
   /* Firefox */
   -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -moz-transition:-moz-transform .15s linear;
   /* Safari+Chrome */
   -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -webkit-transition:-webkit-transform .15s linear;
   /* Opera */
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);  
 }
 
-div.sticky ul li{
-  margin: .25em;
-}

@@ -1,0 +1,13 @@
+ul,li{
+  list-style:none;
+}
+
+ul{
+  overflow:hidden;
+  padding:3em;
+}
+
+ul li{
+  margin:1em;
+  float:left;
+}
