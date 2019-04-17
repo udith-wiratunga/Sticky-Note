@@ -1,5 +1,6 @@
 
 <ul>
-  <app-sticky>loading....</app-sticky>
-  <app-sticky>loading....</app-sticky>
+  <li *ngFor="let note of Notes">
+    <app-sticky [note]="note">loading....</app-sticky>
+  </li>
 </ul>

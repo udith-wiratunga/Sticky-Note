@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { Note } from '../note';
 
 @Component({
   selector: 'app-sticky',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sticky.component.css']
 })
 export class StickyNoteComponent implements OnInit {
-
+  @Input() note:Note;
   constructor() { }
 
   ngOnInit() {

@@ -1,7 +1,7 @@
-<li>
-  <div class="sticky">
-    <h2>Sticky head1</h2>
-    <p>sticky works!</p>
+
+  <div *ngIf="note" class="sticky">
+    <h2>{{note.title}}</h2>
+    <p>{{note.description}}</p>
   </div>
-</li>
+
 
