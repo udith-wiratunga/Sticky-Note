@@ -1,8 +1,31 @@
-div.sticky h2{
+.titleBox
+{
+  border:none;
+  background: #ffc;
+  width:100%;
+  font-family: Lato,Arial, Helvetica, sans-serif;
   font-size: 100%;
   font-weight:bolder;
 }
 
+.descriptionBox
+{
+  border: none;
+  background: #ffc;
+  height: 90%;
+  width:100%;
+  font-family: Lato,Arial, Helvetica, sans-serif;
+}
+
+.closeButton
+{
+  font: bold 16px Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	background-color: #f56f68;
+  text-decoration: none;
+  border-radius: 50%;
+  padding: .09em .25em;
+}
 
 div.sticky {
   overflow: hidden;
