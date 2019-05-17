@@ -1,6 +1,4 @@
-<!--
 <button type="button" class="addNote" (click)="addNote()">+</button>
--->
 <ul>
   <li *ngFor="let note of Notes">
     <app-sticky [note]="note" (noteEvent)="deleteNote($event)">loading....</app-sticky>
