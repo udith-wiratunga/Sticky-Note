@@ -13,4 +13,8 @@ export class StickyNoteComponent implements OnInit {
   ngOnInit() {
   }
 
+  onDelete(note:Note):void{
+    console.log("on delete"+ note);
+  }
+
 }
