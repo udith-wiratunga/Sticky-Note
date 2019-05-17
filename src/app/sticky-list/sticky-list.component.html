@@ -3,6 +3,6 @@
 -->
 <ul>
   <li *ngFor="let note of Notes">
-    <app-sticky [note]="note">loading....</app-sticky>
+    <app-sticky [note]="note" (noteEvent)="deleteNote($event)">loading....</app-sticky>
   </li>
 </ul>
