@@ -18,11 +18,17 @@ const NOTES: Note[] = [
 
 @Injectable()
 export class NotesService {
-
-  constructor() { }
+  notes:Note[];
+  constructor() { 
+    this.notes=NOTES;
+  }
 
   getNotes(): Observable<Note[]> {
-    return of(NOTES);
+    return of(this.notes);
+  }
+
+  addNote(note:Note){
+    this.notes.push({id:note.id,title:note.title,description:note.description});
   }
   
 }

@@ -20,4 +20,9 @@ export class StickyListComponent implements OnInit {
   getNotes():void{
      this.noteService.getNotes().subscribe(Notes=>this.Notes=Notes);
   }
+
+  addNote(note:Note):void{
+    note={id:this.Notes.length,title:"",description:""}
+    this.noteService.addNote(note);
+  }
 }
