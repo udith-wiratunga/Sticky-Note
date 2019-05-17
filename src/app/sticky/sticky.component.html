@@ -1,8 +1,8 @@
 
-  <div *ngIf="note" class="sticky">
-    <a href="#" class="closeButton">x</a>
-    <input class="titleBox" type="text" placeholder="Enter note title" value="{{note.title}}">
-    <textarea class="descriptionBox" placeholder="Enter note description here">{{note.description}}</textarea>
+  <div *ngIf="note" class="sticky">    
+    <input class="title-box" type="text" placeholder="Enter note title" value="{{note.title}}">
+    <button class="close-icon" type="reset">X</button>
+    <textarea class="description-box" placeholder="Enter note description here">{{note.description}}</textarea>
   </div>
 
 

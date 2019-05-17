@@ -1,4 +1,4 @@
-.titleBox
+.title-box
 {
   border:none;
   background: #ffc;
@@ -8,7 +8,7 @@
   font-weight:bolder;
 }
 
-.descriptionBox
+.description-box
 {
   border: none;
   background: #ffc;
@@ -17,7 +17,29 @@
   font-family: Lato,Arial, Helvetica, sans-serif;
 }
 
-.closeButton
+.close-icon {
+	border:1px solid transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+  content: "X";
+	width: 20px;
+	height: 20px;
+	position: relative;
+	background-color: rgb(238, 73, 73);
+	z-index:1;
+	margin: auto;
+	padding: 2px;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-weight: bolder;
+	font-size: 12px;
+	box-shadow: 0 0 2px #E50F0F;
+}
+
+.close-button
 {
   font: bold 16px Helvetica, Arial, sans-serif;
 	color: #FFFFFF;
