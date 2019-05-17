@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { Note } from '../note';
 
 @Component({
@@ -8,13 +8,15 @@ import { Note } from '../note';
 })
 export class StickyNoteComponent implements OnInit {
   @Input() note:Note;
+  @Output() noteEvent = new EventEmitter<Note>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
   onDelete(note:Note):void{
-    console.log(note);
+    this.noteEvent.emit(this.note);
   }
 
 

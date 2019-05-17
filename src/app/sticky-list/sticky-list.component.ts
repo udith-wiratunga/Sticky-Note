@@ -1,3 +1,4 @@
+//https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from '../notes.service';
 import { Note } from '../note';
@@ -10,7 +11,7 @@ import { Note } from '../note';
 
 export class StickyListComponent implements OnInit {
   Notes : Note[];
-
+  note:Note;
   constructor(private noteService:NotesService) { }
 
   ngOnInit() {
@@ -26,7 +27,9 @@ export class StickyListComponent implements OnInit {
     this.noteService.addNote(note);
   }
 
-  deleteNote(note:Note):void{
-    this.Notes = this.Notes.filter(h => h !== note);
+  deleteNote($event):void{
+    this.note=$event;
+    this.Notes = this.Notes.filter(h => h !== this.note);
+    console.log(this.Notes);
   }
 }
