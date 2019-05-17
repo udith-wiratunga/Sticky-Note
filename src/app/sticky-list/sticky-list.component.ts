@@ -25,4 +25,8 @@ export class StickyListComponent implements OnInit {
     note={id:this.Notes.length,title:"",description:""}
     this.noteService.addNote(note);
   }
+
+  deleteNote(note:Note):void{
+    this.Notes = this.Notes.filter(h => h !== note);
+  }
 }
