@@ -38,6 +38,7 @@ export class NotesService {
 
   save(note:Note):Observable<Note[]>{
     note = this.notes.findIndex(n=>n.id==note.id);
+    console.log(this.notes);
     return of(this.notes);
   }
   
