@@ -1,8 +1,8 @@
 
   <div *ngIf="note" class="sticky">    
     <button class="close-icon" type="button" (click)="onDelete(note)">X</button>
-    <input class="title-box" type="text" placeholder="Enter note title" value="{{note.title}}">
-    <textarea class="description-box" placeholder="Enter note description here">{{note.description}}</textarea>
+    <input class="title-box" type="text" placeholder="Enter note title" value="{{note.title}}" maxlength="30">
+    <textarea class="description-box" placeholder="Enter note description here" maxlength="255">{{note.description}}</textarea>
   </div>
 
 
