@@ -6,7 +6,7 @@ const NOTES: Note[] = [
   { id: 1, title: 'Search',description:'Add Notes searching features' },
   { id: 2, title: 'Search Style',description:'Apply apply apropriate styles to the search' },
   { id: 3, title: 'Focuse styling',description:'Remove focuse styling' },
-  { id: 4, title: 'Databese',description:'Add mongodb database' },
+  { id: 4, title: 'Database',description:'Add mongodb database' },
   { id: 5, title: 'Users',description:'Add User Registration  pages' },
   { id: 6, title: 'Routing',description:'Add routing to  nessosory pages' },
   { id: 7, title: 'Dynama',description:'description 17' },

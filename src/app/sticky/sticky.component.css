@@ -1,6 +1,9 @@
 .title-box
 {
   border:none;
+  border-width: 0;
+  box-shadow: none;
+  outline: none;
   background: #ffc;
   width:100%;
   font-family: Lato,Arial, Helvetica, sans-serif;
@@ -12,6 +15,7 @@
 .description-box
 {
   border: none;
+  outline: none;
   background: #ffc;
   height: 80%;
   width:100%;
