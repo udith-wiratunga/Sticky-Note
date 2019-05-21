@@ -31,4 +31,9 @@ export class StickyListComponent implements OnInit {
     this.note=$event;
     this.noteService.deleteNote(this.note).subscribe(Notes=>this.Notes=Notes);
   }
+
+  save($event):void{
+    this.note=$event;
+    this.noteService.save(this.note).subscribe(Notes=>this.Notes=Notes);
+  }
 }

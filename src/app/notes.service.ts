@@ -35,5 +35,10 @@ export class NotesService {
     this.notes = this.notes.filter(h => h !== note);
     return of(this.notes);
   }
+
+  save(note:Note):Observable<Note[]>{
+    note = this.notes.findIndex(n=>n.id==note.id);
+    return of(this.notes);
+  }
   
 }

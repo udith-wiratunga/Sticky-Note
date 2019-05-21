@@ -9,6 +9,7 @@ import { Note } from '../note';
 export class StickyNoteComponent implements OnInit {
   @Input() note:Note;
   @Output() noteEvent = new EventEmitter<Note>();
+  @Output() saveEvent = new EventEmitter<Note>();
 
   constructor() { }
 
@@ -19,6 +20,9 @@ export class StickyNoteComponent implements OnInit {
     this.noteEvent.emit(this.note);
   }
 
+  onSave(note:Note):void{
+    this.saveEvent.emit(this.note);
+  }
 
 
 }
