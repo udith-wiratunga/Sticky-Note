@@ -30,5 +30,10 @@ export class NotesService {
   addNote(note:Note){
     this.notes.push({id:note.id,title:note.title,description:note.description});
   }
+
+  deleteNote(note:Note):Observable<Note[]>{
+    this.notes = this.notes.filter(h => h !== note);
+    return of(this.notes);
+  }
   
 }

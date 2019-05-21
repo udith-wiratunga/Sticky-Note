@@ -29,6 +29,6 @@ export class StickyListComponent implements OnInit {
 
   deleteNote($event):void{
     this.note=$event;
-    this.Notes = this.Notes.filter(h => h !== this.note);
+    this.noteService.deleteNote(this.note).subscribe(Notes=>this.Notes=Notes);
   }
 }
