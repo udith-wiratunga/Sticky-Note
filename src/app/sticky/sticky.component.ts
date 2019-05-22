@@ -23,7 +23,6 @@ export class StickyNoteComponent implements OnInit {
   onSave(note:Note):void{
     this.note=note;
     this.saveEvent.emit(this.note);
-    console.log(note.title);
   }
 
 

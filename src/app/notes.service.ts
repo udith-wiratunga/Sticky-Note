@@ -33,6 +33,7 @@ export class NotesService {
 
   deleteNote(note:Note):Observable<Note[]>{
     this.notes = this.notes.filter(h => h !== note);
+    console.log(this.notes);
     return of(this.notes);
   }
 
