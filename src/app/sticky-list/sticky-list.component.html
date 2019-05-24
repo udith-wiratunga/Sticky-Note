@@ -1,5 +1,5 @@
     <div class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" #searchBox type="search" placeholder="Search">
+      <input class="form-control mr-sm-2" #searchBox type="search" placeholder="Search" (focusout)="search(searchBox.value)">
       <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="search(searchBox.value)">Search</button>
     </div> 
 

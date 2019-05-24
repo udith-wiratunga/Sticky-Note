@@ -42,7 +42,15 @@ export class StickyListComponent implements OnInit {
 
   search(title:string):void{
     this.tempNotes  = this.Notes;
-    this.searchNotes = this.Notes.find(n => n.title==title);
-    console.log(this.searchNotes);
+    if(title.length>0)
+    {
+      this.searchNotes = this.tempNotes.filter(n => n.title.includes(title));
+      this.Notes=this.searchNotes;
+    }
+    else
+    {
+      this.getNotes();
+    }
+    
   }
 }
