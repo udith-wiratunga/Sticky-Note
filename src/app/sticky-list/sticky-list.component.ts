@@ -12,6 +12,9 @@ import { Note } from '../note';
 export class StickyListComponent implements OnInit {
   Notes : Note[];
   note:Note;
+  searchNotes:Note[];
+  tempNotes:Note[];
+
   constructor(private noteService:NotesService) { }
 
   ngOnInit() {
@@ -35,5 +38,11 @@ export class StickyListComponent implements OnInit {
   save($event):void{
     this.note=$event;
     this.noteService.save(this.note).subscribe(Notes=>this.Notes=Notes);
+  }
+
+  search(title:string):void{
+    this.tempNotes  = this.Notes;
+    this.searchNotes = this.Notes.find(n => n.title==title);
+    console.log(this.searchNotes);
   }
 }
