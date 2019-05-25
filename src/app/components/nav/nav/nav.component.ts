@@ -16,9 +16,8 @@ export class NavComponent implements OnInit {
     this.title="Hello Angular"
   }
 
-  search(title:string){
-    console.log(title);
-    this.noteService.search(title).subscribe(Notes=>this.Notes=Notes);
+  search(titleValue:string){
+    this.noteService.search(titleValue).subscribe(Notes=>this.Notes=Notes);
   }
 
 }

@@ -19,6 +19,7 @@ export class StickyListComponent implements OnInit {
 
   ngOnInit() {
     this.getNotes();
+    //this.searchNotes=Note[];
   }
 
   getNotes():void{

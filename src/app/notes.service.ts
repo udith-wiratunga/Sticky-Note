@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+
 import { Note } from './note';
 
 const NOTES: Note[] = [
@@ -25,6 +26,8 @@ export class NotesService {
     this.notes=NOTES;
   }
 
+
+
   getNotes(): Observable<Note[]> {
     return of(this.notes);
   }
@@ -46,8 +49,9 @@ export class NotesService {
   }
   
   search(title:string):Observable<Note[]>{
-    console.log("Service");
+    console.log(this.notes);
     this.tempNotes  = this.notes;
+    console.log(this.tempNotes);
     if(title.length>0)
     {
       this.searchNotes = this.tempNotes.filter(n => n.title.includes(title));
