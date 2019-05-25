@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   title:string;
+  Notes:Note[];
   constructor() { }
 
   ngOnInit() {
     this.title="Hello Angular"
   }
+
+    
 
 }

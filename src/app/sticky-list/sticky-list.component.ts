@@ -40,17 +40,10 @@ export class StickyListComponent implements OnInit {
     this.noteService.save(this.note).subscribe(Notes=>this.Notes=Notes);
   }
 
-  search(title:string):void{
-    this.tempNotes  = this.Notes;
-    if(title.length>0)
-    {
-      this.searchNotes = this.tempNotes.filter(n => n.title.includes(title));
-      this.Notes=this.searchNotes;
-    }
-    else
-    {
-      this.getNotes();
-    }
-    
+  search(title:string){
+    console.log("Component");
+    this.noteService.search(title).subscribe(Notes=>this.Notes=Notes);
   }
+
+
 }

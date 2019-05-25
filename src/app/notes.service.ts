@@ -19,6 +19,8 @@ const NOTES: Note[] = [
 @Injectable()
 export class NotesService {
   notes:Note[];
+  tempNotes:Note[];
+  searchNotes:Note[];
   constructor() { 
     this.notes=NOTES;
   }
@@ -43,4 +45,17 @@ export class NotesService {
     return of(this.notes);
   }
   
+  search(title:string):Observable<Note[]>{
+    console.log("Service");
+    this.tempNotes  = this.notes;
+    if(title.length>0)
+    {
+      this.searchNotes = this.tempNotes.filter(n => n.title.includes(title));
+      return of(this.searchNotes);
+    }
+    else
+    {
+      return of(this.tempNotes);
+    }
+  }
 }
