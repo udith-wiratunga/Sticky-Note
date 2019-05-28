@@ -13,13 +13,13 @@ export class StickyListComponent implements OnInit {
   Notes : Note[];
   note:Note;
   searchNotes:Note[];
-  searchtext:string;
+  
 
   constructor(private noteService:NotesService) { }
 
   ngOnInit() {
     this.getNotes();
-    this.noteService.searchObservable.subscribe(text => this.searchtext = text)
+    this.noteService.searchObservable.subscribe(n => this.Notes = n);
   }
 
   getNotes():void{

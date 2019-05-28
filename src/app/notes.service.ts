@@ -27,7 +27,7 @@ export class NotesService {
     this.notes=NOTES;
   }
 
-  private searchSource = new BehaviorSubject('');
+  private searchSource = new BehaviorSubject(this.notes);
   searchObservable = this.searchSource.asObservable();
 
   getNotes(): Observable<Note[]> {
@@ -50,22 +50,34 @@ export class NotesService {
     return of(this.notes);
   }
   
-  search(title:string):Observable<Note[]>{
-    this.searchText(title);
+  searchText(title:string){
+   
     this.tempNotes  = this.notes;
     console.log(this.tempNotes);
     if(title.length>0)
     {
       this.searchNotes = this.tempNotes.filter(n => n.title.includes(title));
-      return of(this.searchNotes);
     }
     else
     {
-      return of(this.tempNotes);
+      this.tempNotes;
     }
   }
 
-  searchText(text:string){
-    this.searchSource.next(text);
+  search(text:string){
+    
+    //this.searchSource.next(this.searchNotes);
+    this.tempNotes  = this.notes;
+    console.log(this.tempNotes);
+    if(text.length>0)
+    {
+      this.searchNotes = this.tempNotes.filter(n => n.title.includes(text));
+      this.searchSource.next(this.searchNotes)
+    }
+    else
+    {
+      this.tempNotes;
+      this.searchSource.next(this.tempNotes)
+    }    
   }
 }

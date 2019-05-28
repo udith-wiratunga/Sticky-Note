@@ -17,7 +17,7 @@ export class NavComponent implements OnInit {
   }
 
   search(titleValue:string){
-    this.noteService.search(titleValue).subscribe(Notes=>this.Notes=Notes);
+    this.noteService.search(titleValue);//.subscribe(Notes=>this.Notes=Notes);
   }
 
 }
