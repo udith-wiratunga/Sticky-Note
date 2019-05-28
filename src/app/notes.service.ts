@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 import { Note } from './note';
 
@@ -26,7 +27,8 @@ export class NotesService {
     this.notes=NOTES;
   }
 
-
+  private searchSource = new BehaviorSubject('');
+  searchObservable = this.searchSource.asObservable();
 
   getNotes(): Observable<Note[]> {
     return of(this.notes);
@@ -49,7 +51,7 @@ export class NotesService {
   }
   
   search(title:string):Observable<Note[]>{
-    console.log(this.notes);
+    this.searchText(title);
     this.tempNotes  = this.notes;
     console.log(this.tempNotes);
     if(title.length>0)
@@ -61,5 +63,9 @@ export class NotesService {
     {
       return of(this.tempNotes);
     }
+  }
+
+  searchText(text:string){
+    this.searchSource.next(text);
   }
 }
