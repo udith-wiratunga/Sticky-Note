@@ -9,10 +9,11 @@ import { StickyListComponent } from './sticky-list/sticky-list.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { NotesService } from './notes.service';
 import { NavComponent } from './components/nav/nav/nav.component';
+import { SearchComponent } from './components/nav/search/search.component';
 
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule ],
-  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent ],
+  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent ],
   bootstrap:    [ AppComponent ],
   providers: [NotesService]
 })
