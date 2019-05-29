@@ -31,6 +31,7 @@ export class NotesService {
   searchObservable = this.searchSource.asObservable();
 
   getNotes(): Observable<Note[]> {
+    this.searchSource.next(this.notes);
     return of(this.notes);
   }
 
@@ -72,12 +73,11 @@ export class NotesService {
     if(text.length>0)
     {
       this.searchNotes = this.tempNotes.filter(n => n.title.includes(text));
-      this.searchSource.next(this.searchNotes)
+      this.searchSource.next(this.searchNotes);
     }
     else
     {
-      this.tempNotes;
-      this.searchSource.next(this.tempNotes)
+      this.searchSource.next(this.notes);
     }    
   }
 }
