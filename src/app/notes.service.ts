@@ -41,20 +41,20 @@ export class NotesService {
 
   deleteNote(note:Note):Observable<Note[]>{
     this.notes = this.notes.filter(h => h !== note);
-    console.log(this.notes);
+    //console.log(this.notes);
     return of(this.notes);
   }
 
   save(note:Note):Observable<Note[]>{
     note = this.notes.findIndex(n=>n.id==note.id);
-    console.log(this.notes);
+    //console.log(this.notes);
     return of(this.notes);
   }
   
   searchText(title:string){
    
     this.tempNotes  = this.notes;
-    console.log(this.tempNotes);
+    //console.log(this.tempNotes);
     if(title.length>0)
     {
       this.searchNotes = this.tempNotes.filter(n => n.title.includes(title));
@@ -69,7 +69,7 @@ export class NotesService {
     
     //this.searchSource.next(this.searchNotes);
     this.tempNotes  = this.notes;
-    console.log(this.tempNotes);
+    //console.log(this.tempNotes);
     if(text.length>0)
     {
       this.searchNotes = this.tempNotes.filter(n => n.title.includes(text));
