@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Note } from './note';
 
 const NOTES: Note[] = [
-  { id: 1, title: 'Search',description:'Add Notes searching features' },
+  { id: 1, title: 'Nav style',description:'fix the nav bar style' },
   { id: 2, title: 'Search Style',description:'Apply apply apropriate styles to the search' },
   { id: 3, title: 'Focuse styling',description:'Remove focuse styling' },
   { id: 4, title: 'Database',description:'Add mongodb database' },

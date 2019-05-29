@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NotesService } from '../../../notes.service';
-//import { Note } from '../../../note';
 
 @Component({
   selector: 'app-nav',
@@ -9,9 +7,8 @@ import { NotesService } from '../../../notes.service';
 })
 export class NavComponent implements OnInit {
   title:string;
-  //Notes:Note[];
-  searchValue:string = '';
-  constructor(private noteService:NotesService) { }
+
+  constructor() { }
 
   ngOnInit() {
     this.title="Hello Angular";
