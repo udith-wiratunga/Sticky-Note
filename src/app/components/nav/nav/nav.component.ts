@@ -10,10 +10,11 @@ import { Note } from '../../../note';
 export class NavComponent implements OnInit {
   title:string;
   Notes:Note[];
+  searchValue:string = '';
   constructor(private noteService:NotesService) { }
 
   ngOnInit() {
-    this.title="Hello Angular"
+    this.title="Hello Angular";
   }
 
   search(titleValue:string){
