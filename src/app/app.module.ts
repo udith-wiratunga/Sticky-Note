@@ -10,10 +10,14 @@ import { HttpClientModule }    from '@angular/common/http';
 import { NotesService } from './notes.service';
 import { NavComponent } from './components/nav/nav/nav.component';
 import { SearchComponent } from './components/nav/search/search.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { EmailComponent } from './components/user/email/email.component';
+import { MembersComponent } from './components/user/members/members.component';
+import { SignupComponent } from './components/user/signup/signup.component';
 
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule ],
-  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent ],
+  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent, LoginComponent, EmailComponent, MembersComponent, SignupComponent ],
   bootstrap:    [ AppComponent ],
   providers: [NotesService]
 })
