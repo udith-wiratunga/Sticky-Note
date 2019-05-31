@@ -14,10 +14,12 @@ import { LoginComponent } from './components/user/login/login.component';
 import { EmailComponent } from './components/user/email/email.component';
 import { MembersComponent } from './components/user/members/members.component';
 import { SignupComponent } from './components/user/signup/signup.component';
+import { StickyAlertComponent } from './components/common/sticky-alert/sticky-alert.component';
+import { ProgressComponent } from './components/common/progress/progress.component';
 
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule ],
-  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent, LoginComponent, EmailComponent, MembersComponent, SignupComponent ],
+  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent, LoginComponent, EmailComponent, MembersComponent, SignupComponent, StickyAlertComponent, ProgressComponent ],
   bootstrap:    [ AppComponent ],
   providers: [NotesService]
 })
