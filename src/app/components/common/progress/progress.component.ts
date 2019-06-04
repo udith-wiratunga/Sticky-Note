@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress.component.css']
 })
 export class ProgressComponent implements OnInit {
-
+  progress:string;
   constructor() { }
 
   ngOnInit() {

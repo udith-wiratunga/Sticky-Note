@@ -23,10 +23,14 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]
 })
 export class StickyAlertComponent implements OnInit {
-
+  isVisible = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggle(){
+    this.isVisible!=this.isVisible
   }
 
 }

@@ -1,4 +1,4 @@
-
+<app-sticky-alert></app-sticky-alert>
 <ul>
   <li *ngFor="let note of Notes">
     <app-sticky [note]="note" (noteEvent)="deleteNote($event)" (saveEvent)="save($event)">
