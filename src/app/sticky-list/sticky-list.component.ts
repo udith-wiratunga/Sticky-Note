@@ -1,12 +1,21 @@
 //https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
 import { Component, OnInit } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { NotesService } from '../notes.service';
 import { Note } from '../note';
 
 @Component({
   selector: 'app-sticky-list',
   templateUrl: './sticky-list.component.html',
-  styleUrls: ['./sticky-list.component.css']
+  styleUrls: ['./sticky-list.component.css'],
+  animations: [
+      trigger('fade', [ 
+        transition('void => *', [
+          style({ opacity: 0 }), 
+          animate(700, style({opacity: 1}))
+        ]) 
+      ])
+    ]  
 })
 
 export class StickyListComponent implements OnInit {
