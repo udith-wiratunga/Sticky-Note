@@ -15,7 +15,7 @@ const NOTES: Note[] = [
   { id: 8, title: 'Dr IQ',description:'description 18' },
   { id: 9, title: 'Magma',description:'description 19' },
   { id: 10, title: 'Tornado',description:'description 20' },
-  { id: 11,  title:"User", description:"Add users to"  }
+  { id: 11,  title:'User', description:'Add users to'  }
 ];
 
 @Injectable()
