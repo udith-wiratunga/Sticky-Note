@@ -10,7 +10,11 @@ export class FirebaseService {
   noteCollection:AngularFirestoreCollection<Note>;
   notes:Observable<Note[]>;
   constructor(public afs:AngularFirestore) { 
-      this.notes=this.afs.collection('notes').valueChanges();
+      this.notes=this.afs.collection('notes').snapshotChanges().map(changes => {
+        return changes.map(a=>{
+          const data = a.payload.doc.data();
+        })
+      });
   }
 
   getNotes(){
