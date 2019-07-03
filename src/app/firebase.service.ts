@@ -12,7 +12,9 @@ export class FirebaseService {
   constructor(public afs:AngularFirestore) { 
       this.notes=this.afs.collection('notes').snapshotChanges().map(changes => {
         return changes.map(a=>{
-          const data = a.payload.doc.data();
+          const data = a.payload.doc.data() as Note;
+          data.id = a.payload.doc.id;
+          return data;
         })
       });
   }
