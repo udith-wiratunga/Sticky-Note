@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-
+import { FirebaseService } from './firebase.service';
 import { Note } from './note';
 
 const NOTES: Note[] = [
@@ -23,8 +23,13 @@ export class NotesService {
   notes:Note[];
   tempNotes:Note[];
   searchNotes:Note[];
-  constructor() { 
-    this.notes=NOTES;
+  constructor(private fbservice:FirebaseService) { 
+    //this.notes=NOTES;
+    
+    this.notes=fbservice.getNotes().subscribe(notes=>{
+console.log(notes);
+    });
+    
   }
 
   private searchSource = new BehaviorSubject(this.notes);
