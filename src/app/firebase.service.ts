@@ -8,8 +8,13 @@ export class FirebaseService {
 ///https://www.youtube.com/watch?v=cwqeyOFcaoA&list=PLillGF-RfqbaISD5mxDCIjsSYk4jbiXi4&index=2
   
   noteCollection:AngularFirestoreCollection<Note>;
+  notes:Observable<Note[]>;
   constructor(public afs:AngularFirestore) { 
+      this.notes=this.afs.collection('notes').valueChanges();
+  }
 
+  getNotes(){
+    return this.notes;
   }
 
 }
