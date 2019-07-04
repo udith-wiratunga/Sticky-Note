@@ -15,7 +15,6 @@ export class FirebaseService {
     this.notes = this.noteCollection.snapshotChanges().map(changes => {
       return changes.map( action => {
         const data = action.payload.doc.data() as Note;
-            debugger
         data.id = action.payload.doc.id;
         return data;
       })
@@ -24,7 +23,6 @@ export class FirebaseService {
 
   getNotes(){
     return this.notes;
-    console.log(this.notes);
   }
 
 }

@@ -26,8 +26,8 @@ export class NotesService {
   constructor(private fbservice:FirebaseService) { 
     //this.notes=NOTES;
     
-    this.notes= fbservice.getNotes().subscribe(notes=>{
-     console.log(notes);
+    this.fbservice.getNotes().subscribe(notes=>{
+     this.notes=notes;
     });
     console.log(this.notes);
   }

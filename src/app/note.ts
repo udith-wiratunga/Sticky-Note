@@ -1,4 +1,4 @@
-export class note {
+export interface note {
   id:number;
   title:string;
   description:string;
