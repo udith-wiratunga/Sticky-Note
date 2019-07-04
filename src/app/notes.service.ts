@@ -8,7 +8,7 @@ const NOTES: Note[] = [
   { noteId: 1, title: 'Nav style',description:'fix the nav bar style' },
   { noteId: 2, title: 'Search Style',description:'Apply apply apropriate styles to the search' },
   { noteId: 3, title: 'Focuse styling',description:'Remove focuse styling' },
-  { id: 4, title: 'Database',description:'Add mongodb database' },
+  { noteId: 4, title: 'Database',description:'Add mongodb database' },
   { noteId: 5, title: 'Users',description:'Add User Registration  pages' },
   { noteId: 6, title: 'Routing',description:'Add routing to  nessosory pages' },
   { noteId: 7, title: 'Dynama',description:'description 17' },
@@ -24,11 +24,11 @@ export class NotesService {
   tempNotes:Note[];
   searchNotes:Note[];
   constructor(private fbservice:FirebaseService) { 
-    this.notes=NOTES;
-    /*
+    /*this.notes=NOTES;
+    */
     this.fbservice.getNotes().subscribe(notes=>{
      this.notes=notes;
-    });*/
+    });
     console.log(this.notes);
   }
 
