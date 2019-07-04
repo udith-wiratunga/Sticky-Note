@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Note } from './note';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class FirebaseService {
@@ -9,18 +10,21 @@ export class FirebaseService {
   
   noteCollection:AngularFirestoreCollection<Note>;
   notes:Observable<Note[]>;
-  constructor(public afs:AngularFirestore) { 
-      this.notes=this.afs.collection('notes').snapshotChanges().map(changes => {
-        return changes.map(a=>{
-          const data = a.payload.doc.data() as Note;
-          data.id = a.payload.doc.id;
-          return data;
-        })
-      });
+  constructor(public afs:AngularFirestore) {
+    this.noteCollection = this.afs.collection<Note>('notes');
+    this.notes = this.noteCollection.snapshotChanges().map(changes => {
+      return changes.map( action => {
+        const data = action.payload.doc.data() as Note;
+            debugger
+        data.id = action.payload.doc.id;
+        return data;
+      })
+    });
   }
 
   getNotes(){
     return this.notes;
+    console.log(this.notes);
   }
 
 }
