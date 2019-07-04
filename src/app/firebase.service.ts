@@ -19,6 +19,7 @@ export class FirebaseService {
         return data;
       })
     });
+    debugger
     console.log(this.notes);
   }
 
