@@ -11,7 +11,7 @@ export class FirebaseService {
   noteCollection:AngularFirestoreCollection<Note>;
   notes:Observable<Note[]>;
   constructor(public afs:AngularFirestore) {
-    this.noteCollection = this.afs.collection<Note>('notes');
+    this.noteCollection = this.afs.collection<Note>('note');
     this.notes = this.noteCollection.snapshotChanges().map(changes => {
       return changes.map( action => {
         const data = action.payload.doc.data() as Note;
