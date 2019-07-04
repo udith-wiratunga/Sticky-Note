@@ -31,6 +31,8 @@ const firebaseConfig = {
   appId: "1:301539775082:web:20086d3ef23d52d3"
 };
 
+    
+
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule,   AngularFireModule.initializeApp(firebaseConfig),
    AngularFirestoreModule,AngularFirestoreModule ],
