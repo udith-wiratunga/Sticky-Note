@@ -5,17 +5,17 @@ import { FirebaseService } from './firebase.service';
 import { Note } from './note';
 
 const NOTES: Note[] = [
-  { id: 1, title: 'Nav style',description:'fix the nav bar style' },
-  { id: 2, title: 'Search Style',description:'Apply apply apropriate styles to the search' },
-  { id: 3, title: 'Focuse styling',description:'Remove focuse styling' },
+  { noteId: 1, title: 'Nav style',description:'fix the nav bar style' },
+  { noteId: 2, title: 'Search Style',description:'Apply apply apropriate styles to the search' },
+  { noteId: 3, title: 'Focuse styling',description:'Remove focuse styling' },
   { id: 4, title: 'Database',description:'Add mongodb database' },
-  { id: 5, title: 'Users',description:'Add User Registration  pages' },
-  { id: 6, title: 'Routing',description:'Add routing to  nessosory pages' },
-  { id: 7, title: 'Dynama',description:'description 17' },
-  { id: 8, title: 'Dr IQ',description:'description 18' },
-  { id: 9, title: 'Magma',description:'description 19' },
-  { id: 10, title: 'Tornado',description:'description 20' },
-  { id: 11,  title:'User', description:'Add users to'  }
+  { noteId: 5, title: 'Users',description:'Add User Registration  pages' },
+  { noteId: 6, title: 'Routing',description:'Add routing to  nessosory pages' },
+  { noteId: 7, title: 'Dynama',description:'description 17' },
+  { noteId: 8, title: 'Dr IQ',description:'description 18' },
+  { noteId: 9, title: 'Magma',description:'description 19' },
+  { noteId: 10, title: 'Tornado',description:'description 20' },
+  { noteId: 11,  title:'User', description:'Add users to'  }
 ];
 
 @Injectable()
@@ -24,11 +24,11 @@ export class NotesService {
   tempNotes:Note[];
   searchNotes:Note[];
   constructor(private fbservice:FirebaseService) { 
-    //this.notes=NOTES;
-    
+    this.notes=NOTES;
+    /*
     this.fbservice.getNotes().subscribe(notes=>{
      this.notes=notes;
-    });
+    });*/
     console.log(this.notes);
   }
 
@@ -41,7 +41,7 @@ export class NotesService {
   }
 
   addNote(note:Note){
-    this.notes.push({id:note.id,title:note.title,description:note.description});
+    this.notes.push({noteId:note.noteId,title:note.title,description:note.description});
   }
 
   deleteNote(note:Note):Observable<Note[]>{
@@ -51,7 +51,7 @@ export class NotesService {
   }
 
   save(note:Note):Observable<Note[]>{
-    note = this.notes.findIndex(n=>n.id==note.id);
+    note = this.notes.findIndex(n=>n.noteId==note.noteId);
     //console.log(this.notes);
     return of(this.notes);
   }

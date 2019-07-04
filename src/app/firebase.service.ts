@@ -19,6 +19,7 @@ export class FirebaseService {
         return data;
       })
     });
+    console.log(this.notes);
   }
 
   getNotes(){
