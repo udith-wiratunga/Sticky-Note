@@ -40,7 +40,8 @@ export class StickyListComponent implements OnInit {
     note =  {
               noteId:this.Notes.length+1,
               title:"",
-              description:""
+              description:"",
+              email:"udith@test.com"
             };
     this.firebaseService.addNote(note);
   }

@@ -34,7 +34,7 @@ export class FirebaseService {
   }
 
   addNote(note:Note){
-    
+    this.noteCollection.add(note);
   }
 
   deleteNote(note:Note):Observable<Note[]>{
@@ -42,6 +42,9 @@ export class FirebaseService {
   }
 
   save(note:Note):Observable<Note[]>{
+    let noteData = note;
+    delete noteData.id;
+    this.noteCollection.doc('notes/')
     return this.notes;
   }
 
