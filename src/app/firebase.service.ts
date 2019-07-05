@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FirebaseService {
 ///https://www.youtube.com/watch?v=cwqeyOFcaoA&list=PLillGF-RfqbaISD5mxDCIjsSYk4jbiXi4&index=2
+///https://www.youtube.com/watch?v=5I6k77uqtLY
 
 ////Auth
 ////https://www.youtube.com/watch?v=O_jxEC0hWcA&t=1301s
