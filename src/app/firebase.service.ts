@@ -16,14 +16,16 @@ export class FirebaseService {
       return changes.map( action => {
         const data = action.payload.doc.data() as Note;
         data.id = action.payload.doc.id;
+        console.log(data);
         return data;
       })
     });
-    debugger
+    //debugger
     console.log(this.notes);
   }
 
   getNotes(){
+    
     return this.notes;
   }
 
