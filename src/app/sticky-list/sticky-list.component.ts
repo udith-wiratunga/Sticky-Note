@@ -36,7 +36,7 @@ export class StickyListComponent implements OnInit {
   }
 
   addNote(note:Note):void{
-    note={id:this.Notes.length+1,title:"",description:""}
+    note={noteId:this.Notes.length+1,title:"",description:""}
     this.noteService.addNote(note);
   }
 
