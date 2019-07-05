@@ -26,16 +26,18 @@ export class NotesService {
   constructor(private fbservice:FirebaseService) { 
     /*this.notes=NOTES;
     */
+    console.log("note.service");
     this.fbservice.getNotes().subscribe(notes=>{
-     this.notes=notes;
+      this.notes=notes;
+      
     });
-    console.log(this.notes);
   }
 
   private searchSource = new BehaviorSubject(this.notes);
   searchObservable = this.searchSource.asObservable();
 
   getNotes(): Observable<Note[]> {
+    console.log(this.notes);
     this.searchSource.next(this.notes);
     return of(this.notes);
   }
