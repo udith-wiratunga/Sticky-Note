@@ -1,7 +1,8 @@
 //https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { NotesService } from '../notes.service';
+//import { NotesService } from '../notes.service';
+import { FirebaseService } from '../firebase.service';
 import { Note } from '../note';
 
 @Component({
@@ -24,29 +25,29 @@ export class StickyListComponent implements OnInit {
   searchNotes:Note[];
   
 
-  constructor(private noteService:NotesService) { }
+  constructor(private firebaseService:FirebaseService) { }
 
   ngOnInit() {
     this.getNotes();
-    this.noteService.searchObservable.subscribe(n => this.Notes = n);
+    //this.firebaseService.searchObservable.subscribe(n => this.Notes = n);
   }
 
   getNotes():void{
-     this.noteService.getNotes().subscribe(Notes=>this.Notes=Notes);
+     this.firebaseService.getNotes().subscribe(Notes=>this.Notes=Notes);
   }
 
   addNote(note:Note):void{
     note={noteId:this.Notes.length+1,title:"",description:""}
-    this.noteService.addNote(note);
+    this.firebaseService.addNote(note);
   }
 
   deleteNote($event):void{
     this.note=$event;
-    this.noteService.deleteNote(this.note).subscribe(Notes=>this.Notes=Notes);
+    this.firebaseService.deleteNote(this.note).subscribe(Notes=>this.Notes=Notes);
   }
 
   save($event):void{
     this.note=$event;
-    this.noteService.save(this.note).subscribe(Notes=>this.Notes=Notes);
+    this.firebaseService.save(this.note).subscribe(Notes=>this.Notes=Notes);
   }
 }

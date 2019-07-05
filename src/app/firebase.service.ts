@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Note } from './note';
-//import { Observable } from 'rxjs/Observable';
-import { Observable, of } from 'rxjs';
 import 'rxjs/add/operator/map';
+import { Observable} from 'rxjs/Observable';
+//import { Observable, of } from 'rxjs';
+import { Note } from './note';
 
 @Injectable()
 export class FirebaseService {
@@ -28,7 +28,7 @@ export class FirebaseService {
     });
   }
 
-  getNotes(){
+  getNotes():Observable<Note[]>{
     console.log(this.notes);
     return this.notes;
   }
@@ -36,13 +36,13 @@ export class FirebaseService {
   addNote(note:Note){
     
   }
-/*
+
   deleteNote(note:Note):Observable<Note[]>{
-    return of(this.notes);
+    return this.notes;
   }
 
   save(note:Note):Observable<Note[]>{
-    return of(this.notes);
+    return this.notes;
   }
-*/
+
 }
