@@ -14,6 +14,7 @@ export class FirebaseService {
 ////https://www.youtube.com/watch?v=O_jxEC0hWcA&t=1301s
   noteCollection:AngularFirestoreCollection<Note>;
   notes:Observable<Note[]>;
+  noteDoc:AngularFirestoreDocument<Note>;
 
   constructor(public afs:AngularFirestore) {
     console.log("firebase.service");
@@ -37,14 +38,12 @@ export class FirebaseService {
     this.noteCollection.add(note);
   }
 
-  deleteNote(note:Note):Observable<Note[]>{
-    return this.notes;
+  deleteNote(note:Note){
+    this.noteDoc = this.afs.doc('notes/${note.id}');
+    this.noteDoc.delete();
   }
 
   save(note:Note):Observable<Note[]>{
-    let noteData = note;
-    delete noteData.id;
-    this.noteCollection.doc('notes/')
     return this.notes;
   }
 
