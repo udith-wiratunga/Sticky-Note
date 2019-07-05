@@ -48,7 +48,7 @@ export class StickyListComponent implements OnInit {
 
   deleteNote($event):void{
     this.note=$event;
-    this.firebaseService.deleteNote(this.note).subscribe(Notes=>this.Notes=Notes);
+    this.firebaseService.deleteNote(this.note);
   }
 
   save($event):void{
