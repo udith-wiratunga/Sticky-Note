@@ -16,7 +16,7 @@ export class FirebaseService {
   notes:Observable<Note[]>;
   noteDoc:AngularFirestoreDocument<Note>;
   tempNotes:Observable<Note[]>;
-
+  
   constructor(public afs:AngularFirestore) {
     console.log("firebase.service");
     this.noteCollection = this.afs.collection<Note>('note');
@@ -49,5 +49,7 @@ export class FirebaseService {
     this.noteDoc = this.afs.doc(`note/${note.id}`);
     this.noteDoc.update(note);
   }
+
+  
 
 }

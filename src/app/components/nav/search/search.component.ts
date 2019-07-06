@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
   }
 
    search(titleValue:string){
-    this.noteService.search(titleValue);//.subscribe(Notes=>this.Notes=Notes);
+     console.log(titleValue);
+    this.noteService.search(titleValue);
   }
 }
