@@ -25,7 +25,9 @@ export class StickyListComponent implements OnInit {
   searchNotes:Note[];
   
 
-  constructor(private firebaseService:FirebaseService) { }
+  constructor(private firebaseService:FirebaseService,private noteService:NotesService) { 
+    this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes)
+  }
 
   ngOnInit() {
     this.getNotes();
