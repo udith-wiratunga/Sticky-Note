@@ -15,6 +15,7 @@ export class FirebaseService {
   noteCollection:AngularFirestoreCollection<Note>;
   notes:Observable<Note[]>;
   noteDoc:AngularFirestoreDocument<Note>;
+  tempNotes:Observable<Note[]>;
 
   constructor(public afs:AngularFirestore) {
     console.log("firebase.service");

@@ -11,6 +11,6 @@ export class NavComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.title="Hello Angular";
+    this.title="Hello User";
   }
 }

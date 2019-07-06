@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-import { FirebaseService } from './firebase.service';
 import { Note } from './note';
-
+/*
 const NOTES: Note[] = [
   { noteId: 1, title: 'Nav style',description:'fix the nav bar style' },
   { noteId: 2, title: 'Search Style',description:'Apply apply apropriate styles to the search' },
@@ -16,21 +15,21 @@ const NOTES: Note[] = [
   { noteId: 9, title: 'Magma',description:'description 19' },
   { noteId: 10, title: 'Tornado',description:'description 20' },
   { noteId: 11,  title:'User', description:'Add users to'  }
-];
+];*/
 
 @Injectable()
 export class NotesService {
   notes:Note[];
   tempNotes:Note[];
   searchNotes:Note[];
-  constructor(private fbservice:FirebaseService) { 
+  constructor() { 
     /*this.notes=NOTES;
     */
   }
 
   private searchSource = new BehaviorSubject(this.notes);
   searchObservable = this.searchSource.asObservable();
-
+/*
   getNotes(): Observable<Note[]> {
     console.log(this.notes);
     this.searchSource.next(this.notes);
@@ -66,7 +65,7 @@ export class NotesService {
       this.tempNotes;
     }
   }
-
+*/
   search(text:string){
     
     //this.searchSource.next(this.searchNotes);

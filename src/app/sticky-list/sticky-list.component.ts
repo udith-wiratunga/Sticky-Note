@@ -1,7 +1,7 @@
 //https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-//import { NotesService } from '../notes.service';
+import { NotesService } from '../notes.service';
 import { FirebaseService } from '../firebase.service';
 import { Note } from '../note';
 
@@ -53,6 +53,6 @@ export class StickyListComponent implements OnInit {
 
   save($event):void{
     this.note=$event;
-    this.firebaseService.save(this.note).subscribe(Notes=>this.Notes=Notes);
+    this.firebaseService.save(this.note);
   }
 }
