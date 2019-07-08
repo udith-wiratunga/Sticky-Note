@@ -1,4 +1,3 @@
-
 import {trigger,style,state, animate, transition} from '@angular/animations';
 
 export function moveIn() {
