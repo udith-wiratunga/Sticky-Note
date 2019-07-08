@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
-import { moveIn, fallIn } from '../router.animations';
+
+//import { moveIn, fallIn } from './router.animations';
+
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  styleUrls: ['./signup.component.css']/*,
   animations: [moveIn(), fallIn()],
-  host: {'[@moveIn]': ''}
+  host: {'[@moveIn]': ''}*/
 })
 export class SignupComponent implements OnInit {
   state: string = '';
