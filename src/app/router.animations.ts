@@ -1,5 +1,5 @@
-import {trigger, state, animate, transition} from '@angular/core';
-import {style} from '@angular/animations';
+
+import {trigger,style,state, animate, transition} from '@angular/animations';
 
 export function moveIn() {
   return trigger('moveIn', [
