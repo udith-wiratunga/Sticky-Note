@@ -10,10 +10,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { NotesService } from './notes.service';
 import { NavComponent } from './components/nav/nav/nav.component';
 import { SearchComponent } from './components/nav/search/search.component';
-import { LoginComponent } from './components/user/login/login.component';
-import { EmailComponent } from './components/user/email/email.component';
-import { MembersComponent } from './components/user/members/members.component';
-import { SignupComponent } from './components/user/signup/signup.component';
+
 import { StickyAlertComponent } from './components/common/sticky-alert/sticky-alert.component';
 import { ProgressComponent } from './components/common/progress/progress.component';
 import { AngularFireModule } from 'angularfire2';
@@ -36,7 +33,7 @@ const firebaseConfig = {
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule,   AngularFireModule.initializeApp(firebaseConfig),
    AngularFirestoreModule,AngularFirestoreModule ],
-  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent, LoginComponent, EmailComponent, MembersComponent, SignupComponent, StickyAlertComponent, ProgressComponent ],
+  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent,  StickyAlertComponent, ProgressComponent ],
   bootstrap:    [ AppComponent ],
   providers: [NotesService, FirebaseService]
 })
