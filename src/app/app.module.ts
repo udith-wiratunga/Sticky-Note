@@ -20,6 +20,10 @@ import { FirebaseService } from './firebase.service';
 import { LoginComponent } from './components/user/login/login.component';
 import { EmailComponent } from './components/user/email/email.component';
 import { SignupComponent } from './components/user/signup/signup.component';
+import { MembersComponent } from './components/user/members/members.component';
+import { AuthService } from './auth.service';
+//import { AuthGuard } from './auth.service';
+import { routes } from './app.routes';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAWlKJBHRGvHn9y5CfOOBFyxXWEad4jyOg",
@@ -34,10 +38,10 @@ const firebaseConfig = {
     
 
 @NgModule({
-  imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule,   AngularFireModule.initializeApp(firebaseConfig),
+  imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule,   AngularFireModule.initializeApp(firebaseConfig),routes,
    AngularFirestoreModule,AngularFirestoreModule ],
-  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent,  StickyAlertComponent, ProgressComponent, LoginComponent, EmailComponent, SignupComponent ],
+  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent,  StickyAlertComponent, ProgressComponent, LoginComponent, EmailComponent, SignupComponent, MembersComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [NotesService, FirebaseService]
+  providers: [NotesService, FirebaseService, AuthService]
 })
 export class AppModule { }
