@@ -17,6 +17,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { FirebaseService } from './firebase.service';
+import { LoginComponent } from './components/user/login/login.component';
+import { EmailComponent } from './components/user/email/email.component';
+import { SignupComponent } from './components/user/signup/signup.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAWlKJBHRGvHn9y5CfOOBFyxXWEad4jyOg",
@@ -33,7 +36,7 @@ const firebaseConfig = {
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule,   AngularFireModule.initializeApp(firebaseConfig),
    AngularFirestoreModule,AngularFirestoreModule ],
-  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent,  StickyAlertComponent, ProgressComponent ],
+  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent,  StickyAlertComponent, ProgressComponent, LoginComponent, EmailComponent, SignupComponent ],
   bootstrap:    [ AppComponent ],
   providers: [NotesService, FirebaseService]
 })
