@@ -43,6 +43,6 @@ const firebaseConfig = {
    AngularFirestoreModule,AngularFirestoreModule ],
   declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent,  StickyAlertComponent, ProgressComponent, LoginComponent, EmailComponent, SignupComponent, MembersComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [NotesService, FirebaseService, AuthService]
+  providers: [NotesService, FirebaseService,AngularFireAuth, AuthService]
 })
 export class AppModule { }
