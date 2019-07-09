@@ -15,7 +15,7 @@ import { StickyAlertComponent } from './components/common/sticky-alert/sticky-al
 import { ProgressComponent } from './components/common/progress/progress.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-
+import { AngularFireAuth } from "angularfire2/auth";
 
 import { FirebaseService } from './firebase.service';
 import { LoginComponent } from './components/user/login/login.component';
