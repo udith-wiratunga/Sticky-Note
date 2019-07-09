@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFireAuth } from "angularfire2/auth";
+import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { moveIn, fallIn} from '../../../router.animations';
 
@@ -14,8 +15,8 @@ export class EmailComponent implements OnInit {
   state: string = '';
   error: any;
   
-   constructor(public af: AngularFire,private router: Router) {
-      this.af.auth.subscribe(auth => { 
+   constructor(public af: AngularFireAuth,private router: Router) {
+      this.af.authState.subscribe(auth => { 
         if(auth) {
           this.router.navigateByUrl('/members');
         }
