@@ -1,6 +1,6 @@
 import { Component, OnInit,HostBinding } from '@angular/core';
-import { AngularFire} from 'angularfire2';
-import { AuthProviders, AuthMethods } from 'angularfire2/auth';
+import { AngularFireAuth } from "angularfire2/auth";
+import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { moveIn} from '../../../router.animations'
 
@@ -13,8 +13,8 @@ import { moveIn} from '../../../router.animations'
 })
 export class LoginComponent implements OnInit {
   error:any;
-  constructor(public af:AngularFire,private router:Router) { 
-    this.af.auth.subscribe(auth=>{
+  constructor(public af:AngularFireAuth,private router:Router) { 
+    this.af.authState.subscribe(auth=>{
         if(auth){
           this.router.navigateByUrl('/members')
         }
@@ -23,7 +23,28 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+loginFb() {
+  this.af.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    .then(
+      (success) => {
+          this.router.navigate(['/members']);
+      }).catch(
+    (err) => {
+      this.error = err;
+})
+}
 
+loginGoogle() {
+  this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    .then(
+      (success) => {
+        this.router.navigate(['/members']);
+      }).catch(
+    (err) => {
+      this.error = err;
+    })
+}
+/*
   loginFb() {
     this.af.auth.login({
       provider: AuthProviders.Facebook,
@@ -49,6 +70,6 @@ export class LoginComponent implements OnInit {
         this.error = err;
       })
   }
-
+*/
 
 }

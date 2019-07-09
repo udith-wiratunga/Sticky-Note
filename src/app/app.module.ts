@@ -13,12 +13,9 @@ import { SearchComponent } from './components/nav/search/search.component';
 
 import { StickyAlertComponent } from './components/common/sticky-alert/sticky-alert.component';
 import { ProgressComponent } from './components/common/progress/progress.component';
-//import { AngularFireModule } from 'angularfire2';
-//import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
-import { AngularFireModule } from "@angular/fire";
-import { AngularFireAuthModule } from "@angular/fire/auth";
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { FirebaseService } from './firebase.service';
 import { LoginComponent } from './components/user/login/login.component';
