@@ -28,22 +28,18 @@ export class EmailComponent implements OnInit {
   onSubmit(formData) {
       if(formData.valid) {
         console.log(formData.value);
-        this.af.auth.login({
-          email: formData.value.email,
-          password: formData.value.password
-        },
-        {
-          provider: AuthProviders.Password,
-          method: AuthMethods.Password,
-        }).then(
-          (success) => {
-          console.log(success);
+      this.af
+          .auth
+          .signInWithEmailAndPassword(formData.value.email, formData.value.password)
+          .then(value => {
+          console.log('Nice, it worked!');
           this.router.navigate(['/members']);
-        }).catch(
-          (err) => {
-          console.log(err);
+      })
+      .catch(err => {
+        console.log('Something went wrong:',err.message);
+        console.log(err);
           this.error = err;
-        })
+      });
       }
     }
 

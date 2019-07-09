@@ -28,9 +28,11 @@ export class SignupComponent implements OnInit {
       .createUserWithEmailAndPassword(formData.value.email, formData.value.password)
       .then(value => {
         console.log('Success!', value);
+        this.router.navigate(['/login'])
       })
       .catch(err => {
-        console.log('Something went wrong:',err.message);
+        console.log(err);
+        this.error = err;
       });   
     }
   }
