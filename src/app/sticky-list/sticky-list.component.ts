@@ -5,6 +5,10 @@ import { NotesService } from '../notes.service';
 import { FirebaseService } from '../firebase.service';
 import { Note } from '../note';
 
+import { AngularFireAuth } from "angularfire2/auth";
+import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-sticky-list',
   templateUrl: './sticky-list.component.html',
@@ -25,9 +29,17 @@ export class StickyListComponent implements OnInit {
   searchNotes:Note[];
   
 
-  constructor(private firebaseService:FirebaseService,private noteService:NotesService) { 
-    this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes)
+  constructor(public af: AngularFireAuth,private router: Router,private firebaseService:FirebaseService,private noteService:NotesService) { 
+    this.af.authState.subscribe(auth => { 
+        if(auth) {
+          this.router.navigateByUrl('/list');
+          this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes)
+        }
+      });
+    
   }
+
+  
 
   ngOnInit() {
     this.getNotes();

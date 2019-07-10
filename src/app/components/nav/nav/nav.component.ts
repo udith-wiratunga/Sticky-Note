@@ -12,14 +12,11 @@ import { moveIn, fallIn, moveInLeft } from '../../../router.animations';
 export class NavComponent implements OnInit {
   title:string;
 
-  constructor(public af: AngularFireAuth,private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.title="Hello User";
   }
 
-  logout() {
-     this.af.auth.signOut();
-     this.router.navigateByUrl('/login');
-  }
+  
 }
