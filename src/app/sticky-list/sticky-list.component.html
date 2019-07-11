@@ -1,5 +1,5 @@
 <!--app-sticky-alert></app-sticky-alert-->
-<app-nav></app-nav>
+
 <ul *ngIf="Notes">
   <li *ngFor="let note of Notes" @fade>
     <app-sticky [note]="note" (noteEvent)="deleteNote($event)" (saveEvent)="save($event)">

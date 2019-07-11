@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(public af:AngularFireAuth,private router:Router) { 
     this.af.authState.subscribe(auth=>{
         if(auth){
-          //this.router.navigateByUrl('/members')
-          this.router.navigateByUrl('/list');
+          this.router.navigateByUrl('/members')
+          //this.router.navigateByUrl('/list');
         }
     });
   }
