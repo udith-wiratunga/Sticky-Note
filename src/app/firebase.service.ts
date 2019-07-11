@@ -36,7 +36,7 @@ export class FirebaseService {
   }
 
   deleteNote(note:Note){
-    /console.log(note.id);
+    //console.log(note.id);
     this.noteDoc = this.afs.doc(`note/${note.id}`);
     this.noteDoc.delete();
   }

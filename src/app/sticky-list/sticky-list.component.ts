@@ -27,12 +27,13 @@ export class StickyListComponent implements OnInit {
   Notes : Note[];
   note:Note;
   searchNotes:Note[];
+  email:string;
   
 
   constructor(public af: AngularFireAuth,private router: Router,private firebaseService:FirebaseService,private noteService:NotesService) { 
     this.af.authState.subscribe(auth => { 
         if(auth) {
-          console.log(auth);
+          this.email=auth.email;
           this.router.navigateByUrl('/list');
           this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes)
         }
@@ -56,7 +57,7 @@ export class StickyListComponent implements OnInit {
               noteId:this.Notes.length+1,
               title:"",
               description:"",
-              email:"udith@test.com"
+              email:this.email
             };
     this.firebaseService.addNote(note);
   }
