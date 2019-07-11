@@ -12,7 +12,7 @@ import { moveIn, fallIn, moveInLeft } from '../../../router.animations';
   host: {'[@moveIn]': ''}
 })
 export class MembersComponent implements OnInit {
-  Username: string;
+  Username: string = 'User';
   Email:string;
   state: string = '';
 
