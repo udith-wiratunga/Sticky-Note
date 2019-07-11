@@ -1,9 +1,9 @@
 //https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { NotesService } from '../../notes.service';
-import { FirebaseService } from '../../firebase.service';
-import { Note } from '../../note';
+import { NotesService } from '../notes.service';
+import { FirebaseService } from '../firebase.service';
+import { Note } from '../note';
 
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase/app';
@@ -20,13 +20,15 @@ import { Router } from '@angular/router';
           animate(700, style({opacity: 1}))
         ]) 
       ])
-    ]
+    ]  
 })
+
 export class StickyListComponent implements OnInit {
   Notes : Note[];
   note:Note;
   searchNotes:Note[];
   email:string;
+  
 
   constructor(public af: AngularFireAuth,private router: Router,private firebaseService:FirebaseService,private noteService:NotesService) { 
     this.af.authState.subscribe(auth => { 
@@ -39,9 +41,11 @@ export class StickyListComponent implements OnInit {
       });
   }
 
+  
 
   ngOnInit() {
     this.getNotes();
+    //this.firebaseService.searchObservable.subscribe(n => this.Notes = n);
   }
 
   getNotes():void{
@@ -67,5 +71,4 @@ export class StickyListComponent implements OnInit {
     this.note=$event;
     this.firebaseService.save(this.note);
   }
-
 }
