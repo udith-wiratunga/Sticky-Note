@@ -34,7 +34,8 @@ export class StickyListComponent implements OnInit {
     this.af.authState.subscribe(auth => { 
         if(auth) {
           this.email=auth.email;
-          this.router.navigateByUrl('/list');
+          //this.router.navigateByUrl('/list');
+          this.router.navigateByUrl('/members');
           this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes)
         }
       });

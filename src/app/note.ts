@@ -1,4 +1,4 @@
-export interface note {
+export cla note {
   id:string;
   noteId:number;
   title:string;
