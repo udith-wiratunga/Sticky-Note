@@ -1,9 +1,9 @@
 //https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { NotesService } from '../notes.service';
-import { FirebaseService } from '../firebase.service';
-import { Note } from '../note';
+import { NotesService } from '../../../notes.service';
+import { FirebaseService } from '../../../firebase.service';
+import { Note } from '../../../note';
 
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase/app';
