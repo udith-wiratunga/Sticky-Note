@@ -32,6 +32,7 @@ export class StickyListComponent implements OnInit {
   constructor(public af: AngularFireAuth,private router: Router,private firebaseService:FirebaseService,private noteService:NotesService) { 
     this.af.authState.subscribe(auth => { 
         if(auth) {
+          console.log(auth);
           this.router.navigateByUrl('/list');
           this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes)
         }
