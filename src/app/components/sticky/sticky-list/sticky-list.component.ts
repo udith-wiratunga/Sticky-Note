@@ -23,7 +23,7 @@ import { Router } from '@angular/router';
     ]  
 })
 
-export class StickyListComponent implements OnInit {
+export class StickyNoteListComponent implements OnInit {
   Notes : Note[];
   note:Note;
   searchNotes:Note[];
