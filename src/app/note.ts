@@ -1,4 +1,4 @@
-export cla note {
+export class note {
   id:string;
   noteId:number;
   title:string;

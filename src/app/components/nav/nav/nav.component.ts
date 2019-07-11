@@ -17,6 +17,8 @@ export class NavComponent implements OnInit {
   ngOnInit() {
     this.title="Hello User";
   }
-
+  signOut(){
+    console.log("LOG OUT");
+  }
   
 }
