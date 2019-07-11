@@ -10,12 +10,12 @@ import { moveIn, fallIn, moveInLeft } from '../../../router.animations';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  title:string;
+  @Input() UserName:string;
 
   constructor() { }
 
   ngOnInit() {
-    this.title="Hello User";
+    
   }
   signOut(){
     console.log("LOG OUT");

@@ -12,12 +12,15 @@ import { moveIn, fallIn, moveInLeft } from '../../../router.animations';
   host: {'[@moveIn]': ''}
 })
 export class MembersComponent implements OnInit {
-  name: any;
+  Username: string;
+  Email:string;
   state: string = '';
 
   constructor(public af: AngularFireAuth,private router: Router) {
     this.af.authState.subscribe(auth => { 
         if(auth) {
+          this.Username=auth.displayName;
+          this.Email=auth.email;
           this.router.navigateByUrl('/members');
           //this.router.navigateByUrl('/list');
         }
