@@ -92,9 +92,9 @@ body{
 
 
 @media (max-width: 600px) {
-    body {
+    /*body {
         padding-top:1.2em;
-    }
+    }*/
 
     .form-container {
         padding:1.2em;
