@@ -4,8 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { StickyNoteComponent } from './components/sticky/sticky-note/sticky-note.component';
-import { StickyListComponent } from './components/sticky/sticky-list/sticky-list.component';
+import { StickyNoteComponent } from './sticky/sticky.component';
+import { StickyListComponent } from './sticky-list/sticky-list.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { NotesService } from './notes.service';
 import { NavComponent } from './components/nav/nav/nav.component';
@@ -25,7 +25,7 @@ import { MembersComponent } from './components/user/members/members.component';
 import { AuthService } from './auth.service';
 //import { AuthGuard } from './auth.service';
 import { routes } from './app.routes';
-import { StickyNoteListComponent } from './components/sticky/sticky-note-list/sticky-note-list.component';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAWlKJBHRGvHn9y5CfOOBFyxXWEad4jyOg",
@@ -42,7 +42,7 @@ const firebaseConfig = {
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule,HttpClientModule,   AngularFireModule.initializeApp(firebaseConfig),routes,
    AngularFirestoreModule,AngularFirestoreModule ],
-  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent,  StickyAlertComponent, ProgressComponent, LoginComponent, EmailComponent, SignupComponent, MembersComponent, StickyNoteListComponent ],
+  declarations: [ AppComponent,  StickyNoteComponent, StickyListComponent, NavComponent, SearchComponent,  StickyAlertComponent, ProgressComponent, LoginComponent, EmailComponent, SignupComponent, MembersComponent ],
   bootstrap:    [ AppComponent ],
   providers: [NotesService, FirebaseService,AngularFireAuth, AuthService]
 })

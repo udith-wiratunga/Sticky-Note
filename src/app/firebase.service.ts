@@ -14,13 +14,12 @@ export class FirebaseService {
   tempNotes:Observable<Note[]>;
   
   constructor(public afs:AngularFirestore) {
-    console.log("firebase.service");
     this.noteCollection = this.afs.collection<Note>('note');
     this.notes = this.noteCollection.snapshotChanges().map(changes => {
       return changes.map( action => {
         const data = action.payload.doc.data() as Note;
         data.id = action.payload.doc.id;
-        console.log(data);
+        //console.log(data);
         return data;
       })
     });
