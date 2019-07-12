@@ -14,7 +14,14 @@ export class SearchComponent implements OnInit {
   }
 
    search(titleValue:string){
-     console.log(titleValue);
-    this.noteService.search(titleValue);
+      this.noteService.search(titleValue);    
   }
+
+  onKeydown(event,titleValue:string) {
+    console.log(event);
+    if (event.key === "Enter") {
+      
+      this.noteService.search(titleValue);  
+    }
+}
 }
