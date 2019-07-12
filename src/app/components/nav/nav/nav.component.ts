@@ -18,7 +18,7 @@ export class NavComponent implements OnInit {
     
   }
   signOut(){
-    console.log("LOG OUT"+this.UserName);
+   
   }
   
 }
