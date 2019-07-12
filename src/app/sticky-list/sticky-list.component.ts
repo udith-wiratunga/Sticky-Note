@@ -27,11 +27,11 @@ export class StickyListComponent implements OnInit {
   Notes : Note[];
   note:Note;
   searchNotes:Note[];
-  @Input() Email:string;
+  @Input() UserEmail:string;
   
 
   constructor(private firebaseService:FirebaseService,private noteService:NotesService) { 
-    console.log(this.Email);
+    console.log(this.UserEmail);
     this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes);
   }
 
@@ -51,7 +51,7 @@ export class StickyListComponent implements OnInit {
               noteId:this.Notes.length+1,
               title:"",
               description:"",
-              email:this.email
+              email:this.UserEmail
             };
     this.firebaseService.addNote(note);
   }

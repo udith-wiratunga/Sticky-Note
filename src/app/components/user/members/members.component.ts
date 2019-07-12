@@ -13,7 +13,7 @@ import { moveIn, fallIn, moveInLeft } from '../../../router.animations';
 })
 export class MembersComponent implements OnInit {
   Username: string = 'User';
-  email:string;
+  email:string='usith@abc.com';
   state: string = '';
 
   constructor(public af: AngularFireAuth,private router: Router) {
@@ -22,7 +22,6 @@ export class MembersComponent implements OnInit {
           if(auth.displayName){this.Username= auth.displayName;}
           this.email=auth.email;
           this.router.navigateByUrl('/members');
-          //this.router.navigateByUrl('/list');
         }
       });
   }

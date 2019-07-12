@@ -11,6 +11,7 @@ import { moveIn, fallIn, moveInLeft } from '../../../router.animations';
 })
 export class NavComponent implements OnInit {
   @Input() UserName:string;
+  @Input() UserEmail:string;
   @Output() logUserEvent = new EventEmitter(); 
   
 
