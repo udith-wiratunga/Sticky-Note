@@ -14,6 +14,7 @@ export class FirebaseService {
   tempNotes:Observable<Note[]>;
   
   constructor(public afs:AngularFirestore) {
+    //this.noteCollection = this.afs.collection<Note>('note',ref=>ref.where('email','==','udith@abc.com'));
     this.noteCollection = this.afs.collection<Note>('note');
     this.notes = this.noteCollection.snapshotChanges().map(changes => {
       return changes.map( action => {
