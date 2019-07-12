@@ -31,6 +31,7 @@ export class StickyListComponent implements OnInit {
   
 
   constructor(private firebaseService:FirebaseService,private noteService:NotesService) { 
+    console.log(this.Email);
     this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes);
   }
 
