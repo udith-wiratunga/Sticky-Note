@@ -27,7 +27,7 @@ export class StickyListComponent implements OnInit {
   Notes : Note[];
   note:Note;
   searchNotes:Note[];
-  email:string;
+  @Input() Email:string;
   
 
   constructor(private firebaseService:FirebaseService,private noteService:NotesService) { 
