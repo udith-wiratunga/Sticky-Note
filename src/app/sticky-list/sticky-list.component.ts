@@ -1,5 +1,5 @@
 //https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { NotesService } from '../notes.service';
 import { FirebaseService } from '../firebase.service';
@@ -30,15 +30,8 @@ export class StickyListComponent implements OnInit {
   email:string;
   
 
-  constructor(public af: AngularFireAuth,private router: Router,private firebaseService:FirebaseService,private noteService:NotesService) { 
-    this.af.authState.subscribe(auth => { 
-        if(auth) {
-          this.email=auth.email;
-          //this.router.navigateByUrl('/list');
-          this.router.navigateByUrl('/members');
-          this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes)
-        }
-      });
+  constructor(private firebaseService:FirebaseService,private noteService:NotesService) { 
+    this.noteService.searchObservable.subscribe(Notes=>this.Notes=Notes);
   }
 
   
