@@ -19,7 +19,6 @@ export class FirebaseService {
     //this.noteCollection = this.afs.collection<Note>('note',ref=>ref.where('email','==','udith@abc.com'));
       this.af.authState.subscribe(auth => { 
         if(auth) {
-
           this.noteCollection = this.afs.collection<Note>('note',ref=>ref.where('email','==',auth.email));
           this.notes = this.noteCollection.snapshotChanges().map(changes => {
             return changes.map( action => {
@@ -31,10 +30,6 @@ export class FirebaseService {
           });
         }
       });
-
-    
-    
-
   }
 
   
