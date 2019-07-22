@@ -16,7 +16,15 @@ export class FirebaseService {
   constructor(public afs:AngularFirestore) {
     //https://dev.to/crazedvic/query--update-firestore-documents-in-angular-7-5fhg
     //this.noteCollection = this.afs.collection<Note>('note',ref=>ref.where('email','==','udith@abc.com'));
-    this.noteCollection = this.afs.collection<Note>('note',ref=>ref.where('email','==','kr@k.com'));
+   
+
+  }
+
+  
+
+  getNotes(UserEmail:string):Observable<Note[]>{
+    //console.log(this.notes);
+    this.noteCollection = this.afs.collection<Note>('note',ref=>ref.where('email','==',UserEmail));
     this.notes = this.noteCollection.snapshotChanges().map(changes => {
       return changes.map( action => {
         const data = action.payload.doc.data() as Note;
@@ -25,10 +33,6 @@ export class FirebaseService {
         return data;
       })
     });
-  }
-
-  getNotes():Observable<Note[]>{
-    //console.log(this.notes);
     return this.notes;
   }
 

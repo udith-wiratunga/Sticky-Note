@@ -43,7 +43,7 @@ export class StickyListComponent implements OnInit {
   }
 
   getNotes():void{
-     this.firebaseService.getNotes().subscribe(Notes=>this.Notes=Notes);
+     this.firebaseService.getNotes(this.UserEmail).subscribe(Notes=>this.Notes=Notes);
   }
 
   addNote(note:Note):void{
