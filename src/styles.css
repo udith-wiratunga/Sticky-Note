@@ -19,9 +19,10 @@ body{
 }
 
 .txt {
-    background:#fff !important;
+    /*background:#fff !important;*/
     padding:1.3em 1em;
     font-size:1.3em;
+    width:100%;
     border: 1px solid #BBBBBB;
 }
 
@@ -46,6 +47,17 @@ body{
     width:100%;
     display:block;
     margin-bottom:20px;
+}
+
+.basic-btn {
+    background: #3B8598;
+    color:white;
+    margin:0;
+    padding:1.2em;
+    width:100%;
+    cursor:pointer;
+    margin-bottom:15px;
+    font-size:1.3em;
 }
 
 #goback {

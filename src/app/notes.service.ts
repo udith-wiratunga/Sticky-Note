@@ -11,7 +11,10 @@ export class NotesService {
   tempNotes:Note[];
   searchNotes:Note[];
   constructor(private firebaseService:FirebaseService) { 
-    this.firebaseService.getNotes().subscribe(Notes=>this.notes=Notes);
+    if(!this.firebaseService){
+        this.firebaseService.getNotes().subscribe(Notes=>this.notes=Notes);
+    }
+    
     
   }
 
