@@ -16,17 +16,6 @@ export class FirebaseService {
   
   constructor(public afs:AngularFirestore,public af:AngularFireAuth) {
     //https://dev.to/crazedvic/query--update-firestore-documents-in-angular-7-5fhg
-    //this.noteCollection = this.afs.collection<Note>('note',ref=>ref.where('email','==','udith@abc.com'));
-      this.noteCollection = this.afs.collection<Note>('note');
-          this.notes = this.noteCollection.snapshotChanges().map(changes => {
-            return changes.map( action => {
-              const data = action.payload.doc.data() as Note;
-              data.id = action.payload.doc.id;
-              //console.log(data);
-              return data;
-            })
-          });
-
       this.af.authState.subscribe(auth => { 
         if(auth) {
           this.noteCollection = this.afs.collection<Note>('note',ref=>ref.where('email','==',auth.email));
@@ -63,6 +52,17 @@ export class FirebaseService {
     this.noteDoc.update(note);
   }
 
-  
+  getAllNotes():Observable<Note[]>{
+    this.noteCollection = this.afs.collection<Note>('note');
+              this.notes = this.noteCollection.snapshotChanges().map(changes => {
+                return changes.map( action => {
+                  const data = action.payload.doc.data() as Note;
+                  data.id = action.payload.doc.id;
+                  //console.log(data);
+                  return data;
+                })
+              });
+              return this.notes;
+  }
 
 }
